@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login con Google</h1>
+
+    <button onclick="loginWithGoogle()">Iniciar sesión con Google</button>
+
+    <script>
+        function loginWithGoogle() {
+            // Configuración de Google OAuth
+            const clientId = 'TU_ID_DE_CLIENTE_DE_GOOGLE';
+            const redirectUri = 'URL_DE_REDIRECCION_DE_GOOGLE';
+            const scope = 'email';
+
+            // Construir la URL de autenticación
+            const authUrl = `https://accounts.google.com/o/oauth2/auth?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}&response_type=token`;
+
+            // Redireccionar al usuario a la página de autenticación de Google
+            window.location.href = authUrl;
+        }
+    </script>
+</body>
+</html>
